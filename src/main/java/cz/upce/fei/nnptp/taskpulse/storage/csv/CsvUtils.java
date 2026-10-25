@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
+import cz.upce.fei.nnptp.taskpulse.storage.StorageException;
 
 public final class CsvUtils {
     private CsvUtils() {
@@ -75,6 +76,10 @@ public final class CsvUtils {
                 }
             }
             prev = current;
+        }
+        
+        if (inQuotes) {
+            throw new StorageException("Invalid CSV: unclosed double quote at end of file");
         }
 
         if (currentField.length() > 0 || !currentRow.isEmpty()) {
