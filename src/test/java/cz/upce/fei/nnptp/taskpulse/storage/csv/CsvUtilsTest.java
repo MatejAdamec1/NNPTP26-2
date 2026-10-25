@@ -23,6 +23,7 @@ class CsvUtilsTest {
     void acceptsClosedQuoteAtEndOfCSVFile() {
         String csv = "name,description\nProject,\"finished\"";
         
-        assertThatCode(() -> CsvUtils.parse(new StringReader(csv))).doesNotThrowAnyException();
+        assertThatCode(() -> CsvUtils.parse(new StringReader(csv)))
+                .doesNotThrowAnyException();
     }
 }
