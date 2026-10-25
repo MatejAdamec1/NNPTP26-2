@@ -1,11 +1,12 @@
 package cz.upce.fei.nnptp.taskpulse.storage.csv;
 
+import cz.upce.fei.nnptp.taskpulse.storage.StorageException;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
-import cz.upce.fei.nnptp.taskpulse.storage.StorageException;
 
 public final class CsvUtils {
     private CsvUtils() {
